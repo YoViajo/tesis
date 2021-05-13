@@ -3,10 +3,10 @@
 
 # Step 2: Install and Load the Required Packages
 # install the required packages
-install.packages("tm")           # for text mining
-install.packages("SnowballC")    # for text stemming
-install.packages("wordcloud")    # word-cloud generator
-install.packages("RColorBrewer") # color palettes
+#install.packages("tm")           # for text mining
+#install.packages("SnowballC")    # for text stemming
+#install.packages("wordcloud")    # word-cloud generator
+#install.packages("RColorBrewer") # color palettes
 
 # load the packages
 library("tm")
@@ -41,8 +41,12 @@ docs1 = tm_map(docs1, removeNumbers)
 # Remove white spaces
 docs1 = tm_map(docs1, stripWhitespace)
 
+# Quitar stop words
+docs1 = tm_map(docs1, removeWords, stopwords("english"))
+#docs1 = tm_map(docs1, removeWords, c("the", "are", "for", "there", "also", "which"))
+
 # Step 4: Build a term-document Matrix
-dtm = TermDocumentMatrix(docs)
+dtm = TermDocumentMatrix(docs1)
 m = as.matrix(dtm)
 v = sort(rowSums(m), decreasing = TRUE)
 d = data.frame(word = names(v), freq = v)
@@ -56,3 +60,4 @@ wordcloud(words = d$word,
           random.order = FALSE, 
           rot.per = 0.35, 
           colors = brewer.pal(8, "Dark2"))
+
