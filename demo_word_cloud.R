@@ -11,7 +11,7 @@ library(RColorBrewer)
 library(wordcloud2)
 
 # Para apoyar la carga de datos texto
-install.packages("tm")
+#install.packages("tm")
 library(tm)
 
 #Create a vector containing only the text
