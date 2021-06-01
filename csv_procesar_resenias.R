@@ -19,9 +19,9 @@ setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03")
 #datos <- read.csv('s05_export.csv')
 datos <- read.csv('s03_export.csv')
 
-# Quitar columnas innecesarias
-datos_2 <- datos[-1]
-datos_2 <- datos_2[-1]
+# Quitar columnas innecesarias y filas duplicadas
+datos_1 <- datos[c(-1,-2,-3)]
+datos_2 <- unique(datos_1)
 
 # Guardar sólo texto de reseñas
 datos_3 <- as.character(datos_2[ , "txt_resenia"])
