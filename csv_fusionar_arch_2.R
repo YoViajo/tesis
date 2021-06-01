@@ -2,10 +2,15 @@
 ## Adaptado
 
 # Definir directorio de trabajo donde están los archivos CSV
-setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01/")
+#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01/")
+#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04/")
+#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05/")
+setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03/")
 
-path <- "/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01/"
-merge_file_name <- "/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01//merged_file.csv"
+#path <- "/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01/"
+#path <- "/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04/"
+#path <- "/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05/"
+path <- "/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03/"
 
 filenames_list <- list.files(path= path, full.names=TRUE)
 
@@ -17,4 +22,7 @@ All <- lapply(filenames_list,function(filename){
 df <- do.call(rbind.data.frame, All)
 
 # Exportar a CSV
-write_csv(df, 'export.csv')
+#write_csv(df, 's01_export.csv')
+#write_csv(df, 's04_export.csv')
+#write_csv(df, 's05_export.csv')
+write_csv(df, 's03_export.csv')

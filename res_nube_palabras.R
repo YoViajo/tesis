@@ -47,6 +47,10 @@ docs1 = tm_map(docs1, stripWhitespace)
 # Quitar stop words
 docs1 = tm_map(docs1, removeWords, stopwords("spanish"))
 
+# Quitar palabras superfluas
+#docs1 = tm_map(docs1, removeWords, c("lugar")) # Güembé
+#docs1 = tm_map(docs1, removeWords, c("samaipata", "santa", "cruz"))  # Samaipata
+
 # Step 4: Build a term-document Matrix
 dtm = TermDocumentMatrix(docs1)
 m = as.matrix(dtm)
@@ -57,10 +61,11 @@ head(d, 10)
 # Step 5: Generate the Word Cloud
 wordcloud(words = d$word, 
           freq = d$freq,
-          min.freq = 1, 
+          scale=c(2.5,.5),
+          min.freq = 3, 
           max.words = 200,
           random.order = FALSE, 
-          rot.per = 0.75, 
+          rot.per = 0.35, 
           colors = brewer.pal(8, "Dark2"))
 
 
