@@ -89,5 +89,19 @@ for (i in 1:length(txt_ubic_elem)) {
 }
 
 typeof(txt_ubic_pais)
+
+# Reemplazar texto erróneo de país
+txt_ubic_pais <- sub("SP", "Brasil", txt_ubic_pais)
+txt_ubic_pais <- sub("PR", "Brasil", txt_ubic_pais)
+txt_ubic_pais <- sub("Argentina.", "Argentina", txt_ubic_pais)
+txt_ubic_pais <- sub("Tucuman", "Argentina", txt_ubic_pais)
+txt_ubic_pais <- sub("Florida", "EE.UU.", txt_ubic_pais)
+txt_ubic_pais <- sub("Texas", "EE.UU.", txt_ubic_pais)
+txt_ubic_pais <- sub("Tennessee", "EE.UU.", txt_ubic_pais)
+txt_ubic_pais <- sub("Maule", "Chile", txt_ubic_pais)
+txt_ubic_pais <- sub("Lima", "Perú", txt_ubic_pais)
+
 txt_ubic_pais.f <- as.factor(txt_ubic_pais)
 table(txt_ubic_pais.f)
+
+datos$aut_ubic_pais <- txt_ubic_pais.f
