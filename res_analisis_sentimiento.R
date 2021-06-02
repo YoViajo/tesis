@@ -23,26 +23,26 @@ library(syuzhet)
 #Importar datos a analizar
 
 # Definir directorio de trabajo donde están los archivos CSV
-#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01")
+setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01")
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04")
-setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05")
+#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05")
 
 # Leer el archivo CSV
-#datos <- read.csv('s01_export.csv')
+datos <- read.csv('s01_export.csv')
 #datos <- read.csv('s04_export.csv')
-datos <- read.csv('s05_export.csv')
+#datos <- read.csv('s05_export.csv')
 
 
 datos_1 <- unlist(as.character(datos[ , "txt_resenia"]))
-typeof(datos_1)
+#typeof(datos_1)
 
 #Verificando cantidad de tweets importados
 n.tweet <- length(datos_1)
-n.tweet
+#n.tweet
 
 #Convirtiendo los tweets en un data frame
 tweets.df <- as.data.frame(datos_1) 
-head(tweets.df)
+#head(tweets.df)
 
 #Quitando los links en los tweets
 #tweets.df2 <- gsub("http.*","",tweets.df$text)

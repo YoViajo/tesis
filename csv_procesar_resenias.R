@@ -8,19 +8,20 @@ cat("\014")
 rm(list=ls())
 
 # Definir directorio de trabajo donde están los archivos CSV
-#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01")
+setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01")
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04")
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05")
-setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03")
+#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03")
 
 # Leer el archivo CSV
-#datos <- read.csv('s01_export.csv')
+datos <- read.csv('s01_export.csv')
 #datos <- read.csv('s04_export.csv')
 #datos <- read.csv('s05_export.csv')
-datos <- read.csv('s03_export.csv')
+#datos <- read.csv('s03_export.csv')
 
 # Quitar columnas innecesarias y filas duplicadas
-datos_1 <- datos[c(-1,-2,-3)]
+#datos_1 <- datos[c(-1,-2,-3)]
+datos_1 <- datos[c(-1)]
 datos_2 <- unique(datos_1)
 
 # Guardar sólo texto de reseñas
