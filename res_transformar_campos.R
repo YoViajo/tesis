@@ -12,14 +12,14 @@ library(stringr)
 # Definir directorio de trabajo donde están los archivos CSV
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01")
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04")
-#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05")
-setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03")
+setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05/170r")
+#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03")
 
 # Leer el archivo CSV
 #datos <- read.csv('s01_export_790r.csv')
 #datos <- read.csv('s04_export.csv')
-#datos <- read.csv('s05_export.csv')
-datos <- read.csv('s03_export_580r.csv')
+datos <- read.csv('s05_export.csv')
+#datos <- read.csv('s03_export_580r.csv')
 
 datos <- datos[c(-1)]
 
@@ -49,6 +49,7 @@ txt_mes_num <- match(txt_mes, month.abb)
 datos$exp_mes <- txt_mes_num
 
 txt_anio <- substr(datos.fec_exp,9,12)
+#txt_anio <- substr(datos.fec_exp,5,8)
 txt_anio.num <- as.numeric(txt_anio)
 datos$exp_anio <- txt_anio.num
 
@@ -65,6 +66,9 @@ cad_txt[1]
 car_quitar <- substring(cad_txt, 1, 1)
 datos.tipo_exp <- str_trim(gsub(car_quitar, '', datos.tipo_exp))
 typeof(datos.tipo_exp)
+
+# (alternativa) Extraer directarmente texto de tipo de experiencia
+datos.tipo_exp <- substring(datos$fecha_experiencia, 16, str_length(datos$fecha_experiencia))
 
 # Convertir en tipo factor (categoría)
 datos.tipo_exp.f <- as.factor(datos.tipo_exp)
@@ -106,6 +110,7 @@ txt_ubic_pais <- sub("Cochabamba", "Bolivia", txt_ubic_pais)
 txt_ubic_pais <- sub("La Paz", "Bolivia", txt_ubic_pais)
 txt_ubic_pais <- sub("Santa Cruz", "Bolivia", txt_ubic_pais)
 txt_ubic_pais <- sub("MG", "Brasil", txt_ubic_pais)
+txt_ubic_pais <- sub("RJ", "Brasil", txt_ubic_pais)
 txt_ubic_pais <- sub("SP", "Brasil", txt_ubic_pais)
 txt_ubic_pais <- sub("PR", "Brasil", txt_ubic_pais)
 txt_ubic_pais <- sub("Canada", "Canadá", txt_ubic_pais)
