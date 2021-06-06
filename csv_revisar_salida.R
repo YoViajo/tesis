@@ -9,8 +9,8 @@ rm(list=ls())
 
 # Definir directorio de trabajo donde están los archivos CSV
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01")
-#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04")
-setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05/170r")
+setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04/250r")
+#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05/170r")
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03")
 
 # Leer el archivo CSV
@@ -26,6 +26,7 @@ datos_2 <- datos[c(-1,-2)]
 datos_3 <- unique(datos_2)
 
 # Guardar archivo CSV
-write.csv(datos_3, 's05_export.csv')
+write.csv(datos_3, 's04_export.csv')
+#write.csv(datos_3, 's05_export.csv')
 #write.csv(datos_3, 's03_export.csv')
 #write.csv(datos_3, 's01_export.csv')

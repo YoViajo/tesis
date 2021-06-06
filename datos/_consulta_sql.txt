@@ -1,0 +1,4 @@
+SELECT vj_pais AS pais, count(ID) AS  num_viaj
+FROM t_opinion_viajero
+GROUP BY vj_pais
+ORDER BY num_viaj DESC

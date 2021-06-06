@@ -18,11 +18,11 @@ datos <- read.csv('datos.csv')
 datos <- datos[c(-1)]
 colnames(datos) <- c("op_titulo","exp_fec_txt","op_texto","op_escrito","vj_nombre","vj_perfil","vj_aportes","vj_seunio","vj_ubicac","exp_mes","exp_anio","exp_tipo","vj_pais")
 
-opiniones <- as.character(datos$op_texto)
-typeof(opiniones)
-length(opiniones)
-# Máxima longitud de texto de opiniones
-max(nchar(opiniones))
+# Listar longitud máxima de tetxo de cada columna
+for (i in 1:ncol(datos)) {
+  v <- as.character(datos[,i])
+  print(max(nchar(v)))
+}
 
 # Guardar nueva base de datos
 write.csv(datos, 'datos.csv')

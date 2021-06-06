@@ -1,0 +1,5 @@
+             Amigos   Familia  Negocios    Pareja Solitario 
+       52        70        48         9        42        16
+
+
+

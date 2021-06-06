@@ -11,14 +11,14 @@ library(stringr)
 
 # Definir directorio de trabajo donde están los archivos CSV
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01")
-#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04")
-setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05/170r")
+setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04/250r")
+#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05/170r")
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03")
 
 # Leer el archivo CSV
 #datos <- read.csv('s01_export_790r.csv')
-#datos <- read.csv('s04_export.csv')
-datos <- read.csv('s05_export.csv')
+datos <- read.csv('s04_export.csv')
+#datos <- read.csv('s05_export.csv')
 #datos <- read.csv('s03_export_580r.csv')
 
 datos <- datos[c(-1)]
@@ -54,18 +54,18 @@ txt_anio.num <- as.numeric(txt_anio)
 datos$exp_anio <- txt_anio.num
 
 # Extraer tipo de experiencia como texto
-datos.tipo_exp <- str_trim(substr(datos$fecha_experiencia,13,str_length(datos$fecha_experiencia)))
-head(datos.fec_exp)
-head(datos.tipo_exp)
+#datos.tipo_exp <- str_trim(substr(datos$fecha_experiencia,13,str_length(datos$fecha_experiencia)))
+#head(datos.fec_exp)
+#head(datos.tipo_exp)
 
-typeof(datos.tipo_exp)
+#typeof(datos.tipo_exp)
 
 # Quitar caracter especial de tipo de experiencia
-cad_txt <- datos.tipo_exp[1]
-cad_txt[1]
-car_quitar <- substring(cad_txt, 1, 1)
-datos.tipo_exp <- str_trim(gsub(car_quitar, '', datos.tipo_exp))
-typeof(datos.tipo_exp)
+#cad_txt <- datos.tipo_exp[1]
+#cad_txt[1]
+#car_quitar <- substring(cad_txt, 1, 1)
+#datos.tipo_exp <- str_trim(gsub(car_quitar, '', datos.tipo_exp))
+#typeof(datos.tipo_exp)
 
 # (alternativa) Extraer directarmente texto de tipo de experiencia
 datos.tipo_exp <- substring(datos$fecha_experiencia, 16, str_length(datos$fecha_experiencia))
@@ -109,11 +109,13 @@ txt_ubic_pais <- sub("Boliviaa", "Bolivia", txt_ubic_pais)
 txt_ubic_pais <- sub("Cochabamba", "Bolivia", txt_ubic_pais)
 txt_ubic_pais <- sub("La Paz", "Bolivia", txt_ubic_pais)
 txt_ubic_pais <- sub("Santa Cruz", "Bolivia", txt_ubic_pais)
+txt_ubic_pais <- sub("BA", "Brasil", txt_ubic_pais)
 txt_ubic_pais <- sub("MG", "Brasil", txt_ubic_pais)
 txt_ubic_pais <- sub("RJ", "Brasil", txt_ubic_pais)
 txt_ubic_pais <- sub("SP", "Brasil", txt_ubic_pais)
 txt_ubic_pais <- sub("PR", "Brasil", txt_ubic_pais)
 txt_ubic_pais <- sub("Canada", "Canadá", txt_ubic_pais)
+txt_ubic_pais <- sub("Antofagasta", "Chile", txt_ubic_pais)
 txt_ubic_pais <- sub("Maule", "Chile", txt_ubic_pais)
 txt_ubic_pais <- sub("Region Metropolitana", "Chile", txt_ubic_pais)
 txt_ubic_pais <- sub("Tarapaca", "Chile", txt_ubic_pais)
@@ -122,6 +124,7 @@ txt_ubic_pais <- sub("California", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Carolina del Norte", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Colorado", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Distrito de Columbia", "EE.UU.", txt_ubic_pais)
+txt_ubic_pais <- sub("District of Columbia", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Florida", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Georgia", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Illinois", "EE.UU.", txt_ubic_pais)
@@ -135,6 +138,7 @@ txt_ubic_pais <- sub("Estado de Nueva York", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("NY", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Ohio", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Texas", "EE.UU.", txt_ubic_pais)
+txt_ubic_pais <- sub("TX", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Tennessee", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Utah", "EE.UU.", txt_ubic_pais)
 txt_ubic_pais <- sub("Vermont", "EE.UU.", txt_ubic_pais)
