@@ -1,0 +1,16 @@
+op_titulo,exp_fec,op_texto,op_fec_esc,vj_nom,vj_perfil,vj_aportes,vj_seunio,vj_ubicac,exp_mes,exp_anio,exp_tipo,vj_pais    
+
+
+op_titulo
+exp_fec_txt
+op_texto
+op_escrito
+vj_nombre
+vj_perfil
+vj_aportes
+vj_seunio
+vj_ubicac
+exp_mes
+exp_anio
+exp_tipo
+vj_pais    
