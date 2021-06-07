@@ -12,12 +12,15 @@ library(magrittr)
 library(dplyr)
 
 # Definir directorio de trabajo donde están los archivos CSV
-setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01")
+setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01/790r")
 
 # Leer el archivo CSV
-datos <- read.csv('datos.csv')
+#datos <- read.csv('datos.csv')
+datos <- read.csv('datos_ed.csv')
 
 datos <- datos[c(-1)]
+
+### Lugar de residencia (país, continente) de viajeros
 
 table(datos$aut_ubic_pais)
 
@@ -77,3 +80,18 @@ ggplot(df,aes(x = reorder(paises, cant_viaj), y = cant_viaj))+geom_bar(stat="ide
 ggplot(df, aes(x="", y=cant_viaj, fill=paises)) +
   geom_bar(stat="identity", width=1) +
   coord_polar("y", start=0)
+
+
+### Caracterización de viajeros 
+
+# Caracterización por número de aportes (opiniones escritas)
+
+v1 <- as.numeric(as.character(datos$a_num_aportes))
+# Quitar valores nulos del vector
+v2 <- v1[!is.na(v1)]
+# Cuál es el valor máximo?  = 4007 aportes!
+max(v2)
+
+# Calcular y representar función de densidad
+densidad_aportes <- density(v2)
+plot(densidad_aportes)
