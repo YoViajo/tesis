@@ -1,0 +1,36 @@
+
+## NÚMERO DE APORTES DE VIAJEROS
+
+> max(v2)
+[1] 4007
+> hist(v2)
+> # Cuál es el valor máximo?  = 4007 aportes!
+> min(v2)
+[1] 1
+> mean(v2)
+[1] 84.48077
+> sd(v2)
+[1] 252.9169
+
+
+> df_aportes%>%group_by(MyQuantileBins)%>%count()
+# A tibble: 4 x 2
+# Groups:   MyQuantileBins [4]
+  MyQuantileBins      n
+  <fct>           <int>
+1 [1,8]             203
+2 (8,22]            196
+3 (22,61.2]         186
+4 (61.2,4.01e+03]   195
+
+
+> # clases creadas y número de observaciones que caen en cada clase
+> res$classif
+style: jenks
+    [1,280]  (280,1098] (1098,2768] (2768,4007] 
+        734          41           4           1 
+> # puntos de corte de las clases
+> res$classif$brks
+[1]    1  280 1098 2768 4007
+
+
