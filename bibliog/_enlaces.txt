@@ -1,0 +1,10 @@
+http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm
+NRC Word-Emotion Association Lexicon (aka EmoLex)
+
+
+https://cran.r-project.org/web/packages/syuzhet/vignettes/syuzhet-vignette.html
+Introduction to the Syuzhet Package
+
+
+https://www.r-bloggers.com/2021/05/sentiment-analysis-in-r-3/
+Sentiment analysis in R
