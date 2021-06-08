@@ -1,3 +1,6 @@
+
+#*#*# csv_cortes_naturales.R #*#*#
+
 # Clear plots
 if(!is.null(dev.list())) dev.off()
 # Clear console

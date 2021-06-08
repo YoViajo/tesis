@@ -1,0 +1,4 @@
+Ref: https://www.r-bloggers.com/2021/05/sentiment-analysis-in-r-3/
+
+Stop words are the most commonly occurring words in a language and have very little value in terms of extracting useful information from the text
+

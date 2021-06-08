@@ -23,19 +23,14 @@ library(syuzhet)
 #Importar datos a analizar
 
 # Definir directorio de trabajo donde están los archivos CSV
-#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01")
-#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04")
-#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05")
-setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03")
+setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01/790r")
 
 # Leer el archivo CSV
-#datos <- read.csv('s01_export.csv')
-#datos <- read.csv('s04_export.csv')
-#datos <- read.csv('s05_export.csv')
-datos <- read.csv('s03_export_580r.csv')
+datos <- read.csv('opiniones_nac.csv')
+#datos <- read.csv('opiniones_ext.csv')
 
 
-datos_1 <- unlist(as.character(datos[ , "txt_resenia"]))
+datos_1 <- unlist(as.character(datos[ , "op_texto"]))
 #typeof(datos_1)
 
 #Verificando cantidad de tweets importados
@@ -73,6 +68,11 @@ emocion.df <- get_nrc_sentiment(char_v = palabra.df, language = "spanish")
 #trabajó la función get_nrc_sentiment cada uno de los tweets
 emocion.df2 <- cbind(tweets.df, emocion.df)
 head(emocion.df2)
+
+#elem_enojados <- which(emocion.df2$anger > 0)
+#s_v <- get_sentences(as.character(datos$op_texto))
+#s_v[elem_enojados]
+
 
 #Creamos un data frame en el cual las filas serán las emociones
 #y las columnas los puntajes totales

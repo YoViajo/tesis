@@ -1,3 +1,5 @@
+#*#*# res_exploracion_datos.R #*#*#
+
 
 ## NÚMERO DE APORTES DE VIAJEROS
 
@@ -24,6 +26,8 @@
 4 (61.2,4.01e+03]   195
 
 
+#*#*# csv_cortes_naturales.R #*#*#
+
 > # clases creadas y número de observaciones que caen en cada clase
 > res$classif
 style: jenks
@@ -32,5 +36,109 @@ style: jenks
 > # puntos de corte de las clases
 > res$classif$brks
 [1]    1  280 1098 2768 4007
+
+
+#*#*# res_analisis_sentimiento_alt.R #*#*#
+
+## s01 Nacionales
+> # Medida de la valencia general en el texto
+> sum(nrc_vector)
+[1] 586
+> # Tendencia central, valencia emocional promedio
+> mean(nrc_vector)
+[1] 2.462185
+> # Sensación amplia de la distribución de sentimiento
+> summary(nrc_vector)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -7.000   1.000   2.000   2.462   4.000  14.000 
+
+
+## s01 Extranjeros
+> sum(nrc_vector)
+[1] 1517
+> mean(nrc_vector)
+[1] 2.788603
+> summary(nrc_vector)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+-11.000   1.000   2.000   2.789   4.000  23.000 
+
+
+## s03 Nacionales
+> # Medida de la valencia general en el texto
+> sum(nrc_vector)
+[1] 371
+> # Tendencia central, valencia emocional promedio
+> mean(nrc_vector)
+[1] 2.789474
+> # Sensación amplia de la distribución de sentimiento
+> summary(nrc_vector)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -4.000   0.000   2.000   2.789   5.000  25.000 
+
+
+## s03 Extranjeros
+> # Medida de la valencia general en el texto
+> sum(nrc_vector)
+[1] 1156
+> # Tendencia central, valencia emocional promedio
+> mean(nrc_vector)
+[1] 2.682135
+> # Sensación amplia de la distribución de sentimiento
+> summary(nrc_vector)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -7.000   1.000   2.000   2.682   4.000  15.000 
+
+
+## s04 Nacionales
+> nrc_vector <- get_sentiment(v_txt, method = "nrc", lang = "spanish")
+> # Medida de la valencia general en el texto
+> sum(nrc_vector)
+[1] 207
+> # Tendencia central, valencia emocional promedio
+> mean(nrc_vector)
+[1] 2.464286
+> # Sensación amplia de la distribución de sentimiento
+> summary(nrc_vector)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -5.000   0.000   2.000   2.464   4.000  21.000 
+
+## s04 Extranjeros
+> # Medida de la valencia general en el texto
+> sum(nrc_vector)
+[1] 198
+> # Tendencia central, valencia emocional promedio
+> mean(nrc_vector)
+[1] 1.302632
+> # Sensación amplia de la distribución de sentimiento
+> summary(nrc_vector)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -9.000  -1.000   1.000   1.303   3.000  23.000
+
+
+## s05 Nacionales
+> # Medida de la valencia general en el texto
+> sum(nrc_vector)
+[1] 123
+> # Tendencia central, valencia emocional promedio
+> mean(nrc_vector)
+[1] 1.983871
+> # Sensación amplia de la distribución de sentimiento
+> summary(nrc_vector)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -4.000   0.000   1.000   1.984   3.000  14.000 
+
+## s05 Extranjeros
+> # Medida de la valencia general en el texto
+> sum(nrc_vector)
+[1] 197
+> # Tendencia central, valencia emocional promedio
+> mean(nrc_vector)
+[1] 2.814286
+> # Sensación amplia de la distribución de sentimiento
+> summary(nrc_vector)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ -4.000   0.000   2.000   2.814   5.000  15.000
+
+
 
 

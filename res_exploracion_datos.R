@@ -1,3 +1,5 @@
+### res_exploracion_datos.R ###
+
 
 # Clear plots
 if(!is.null(dev.list())) dev.off()
