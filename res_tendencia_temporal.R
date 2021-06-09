@@ -13,8 +13,8 @@ rm(list=ls())
 # Definir directorio de trabajo donde están los archivos CSV
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s01/790r")
 #setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s03/580r")
-#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04/250r")
-setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05/170r")
+setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s04/250r")
+#setwd("/home/yoviajo/Documentos/lab/tesis/p11/extraido/opiniones/s05/170r")
 
 
 # Leer el archivo CSV
@@ -39,8 +39,8 @@ for (a in a_ini:a_fin) {
   datos_sel <- filter(datos, exp_anio==a)
   #num_reg <- nrow(datos_sel)
   #print(num_reg)
-#  nrc_vector <- get_sentiment(datos_sel$txt_resenia, method = "nrc", lang = "spanish")
-  nrc_vector <- get_sentiment(datos_sel$op_texto, method = "nrc", lang = "spanish")
+  nrc_vector <- get_sentiment(datos_sel$txt_resenia, method = "nrc", lang = "spanish")
+#  nrc_vector <- get_sentiment(datos_sel$op_texto, method = "nrc", lang = "spanish")
   prom_anasem <- mean(nrc_vector)
   print(mean(prom_anasem))
   lis_anios[i] <- a
@@ -53,6 +53,11 @@ colnames(df_anasem) <- c("anio", "val_sent")
 
 df_anasem[] <- lapply(df_anasem, function(x) if(is.factor(x)) as.numeric(as.character(x)) else x)
 
+# Exportar a CSV
+#write.csv(df_anasem, "s01_anasem.csv")
+#write.csv(df_anasem, "s03_anasem.csv")
+write.csv(df_anasem, "s04_anasem.csv")
+#write.csv(df_anasem, "s05_anasem.csv")
 
 # Gráfico de tendencia de valores de sentimiento en el tiempo
 mi_graf <- ggplot(df_anasem, aes(x = anio, y = val_sent)) +
