@@ -1,0 +1,51 @@
+> # Vista general del conjunto de datos
+> datos %>% glimpse()
+Rows: 782
+Columns: 15
+$ id                <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 2…
+$ titulo            <fct> "Un gran lugar para relajarse y disfrutar de un día", "Un paraiso", "Complejo relajante"…
+$ fecha_experiencia <fct> ago. de 2014 • Amigos, oct. de 2011, jun. de 2016 • Pareja, dic. de 2013 • Familia, ago.…
+$ txt_resenia       <fct> "Si quieres tomar un día de descanso y sólo quieres relajarte, entonces este lugar es pr…
+$ fecha_escrito     <fct> , Escrita el 28 de enero de 2012, , Escrita el 22 de noviembre de 2014, Escrita el 4 de …
+$ autor.enlace      <fct> blownfaraway, Esthefany, JA Experiences N, Silvina A, Alejandra C, PANCHOJESUS, karlitaa…
+$ autor.enlace.href <fct> https://www.tripadvisor.cl/Profile/blownfaraway, https://www.tripadvisor.cl/Profile/isth…
+$ a_num_aportes     <int> 120, 119, 464, 95, 135, 106, 20, 7, 576, 205, 919, 129, 5, 36, 14, 678, 24, 35, 55, 25, …
+$ a_desde_cuando    <fct> Se unió en sep. de 2008, Se unió en mar. de 2011, Se unió en feb. de 2015, Se unió en ma…
+$ a_ubicacion       <fct> "Erlangen, Alemania", "Düsseldorf, Alemania", "Buenos Aires, Argentina", "San Salvador d…
+$ exp_mes           <int> 8, 10, 6, 12, 8, 3, 7, 12, 6, 11, 2, 10, 3, 2, 9, 10, 12, 11, 1, 9, 9, 9, 2, 12, NA, 12,…
+$ exp_anio          <int> 2014, 2011, 2016, 2013, 2016, 2013, 2017, 2016, 2017, 2014, 2017, 2016, 2016, 2015, 2016…
+$ exp_tipo          <fct> Amigos, , Pareja, Familia, Pareja, Pareja, Familia, Familia, Amigos, Familia, Familia, N…
+$ aut_ubic_pais     <fct> Alemania, Alemania, Argentina, Argentina, Argentina, Argentina, Argentina, Argentina, Ar…
+$ exp_fecha         <date> 2014-08-01, 2011-10-01, 2016-06-01, 2013-12-01, 2016-08-01, 2013-03-01, 2017-07-01, 201…
+
+
+> datos %>% introduce()
+  rows columns discrete_columns continuous_columns all_missing_columns total_missing_values complete_rows
+1  782      15               11                  4                   0                  286           607
+  total_observations memory_usage
+1              11730       669224
+
+
+
+> datos %>% profile_missing()
+             feature num_missing pct_missing
+1                 id           0 0.000000000
+2             titulo           0 0.000000000
+3  fecha_experiencia           0 0.000000000
+4        txt_resenia           0 0.000000000
+5      fecha_escrito           0 0.000000000
+6       autor.enlace           0 0.000000000
+7  autor.enlace.href           0 0.000000000
+8      a_num_aportes           2 0.002557545
+9     a_desde_cuando           0 0.000000000
+10       a_ubicacion           0 0.000000000
+11           exp_mes          47 0.060102302
+12          exp_anio          47 0.060102302
+13          exp_tipo           0 0.000000000
+14     aut_ubic_pais         143 0.182864450
+15         exp_fecha          47 0.060102302
+
+
+
+
+
