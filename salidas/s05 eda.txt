@@ -1,0 +1,49 @@
+> datos %>% glimpse()
+Rows: 132
+Columns: 15
+$ id            <int> 2, 3, 8, 25, 60, 61, 63, 84, 127, 130, 1, 4, 5, 6, 7, 11, 12, 16, 18, 20, 21, 24, 28, 31, 3…
+$ op_titulo     <fct> "No está ubicada donde lo localiza el mapa de TripAdvisor", "Exelente", "Sorprende, pero no…
+$ exp_fec_txt   <fct> dic. de 2017 • Amigos, feb. de 2019, jul. de 2016 • Familia, ene. de 2017 • Pareja, jul. de…
+$ op_texto      <fct> "Lo teníamos como una visita a realizar, pero resultó que no estaba localizada donde la ubi…
+$ op_escrito    <fct> Escrita el 6 de enero de 2018, Escrita el 25 de octubre de 2019, Escrita el 28 de julio de …
+$ vj_nombre     <fct> M Luisa B, Adrian K, Sergio B, CHGalvez, Travesia M, luis R, Maria D, MVS_ENERO14, grandsal…
+$ vj_perfil     <fct> https://www.tripadvisor.cl/Profile/63mluisab, https://www.tripadvisor.cl/Profile/kusskuss, …
+$ vj_seunio     <fct> Se unió en ago. de 2014, Se unió en mar. de 2011, Se unió en sep. de 2014, Se unió en ene. …
+$ vj_ubicac     <fct> "San Miguel de Tucuman, Argentina", "Buenos Aires, Argentina", "Villa Carlos Paz, Argentina…
+$ exp_mes       <int> 12, 2, 7, 1, 7, 10, 1, 1, 9, 9, 9, 6, 9, 1, 1, 1, 11, 1, 9, 4, 12, 11, 1, 12, 10, 12, 2, 3,…
+$ exp_anio      <int> 2017, 2019, 2016, 2017, 2015, 2015, 2015, 2015, 2014, 2016, 2016, 2016, 2016, 2014, 2016, 2…
+$ exp_tipo      <fct> Amigos, , Familia, Pareja, Amigos, Negocios, Familia, Solitario, Amigos, Amigos, , Familia,…
+$ vj_pais       <fct> Argentina, Argentina, Argentina, Argentina, Argentina, Argentina, Argentina, Argentina, Arg…
+$ a_num_aportes <int> 33, 3256, 198, 82, 341, 116, 55, 22, 919, 52, 14, 15, 34, 3, 11, 70, 4, 160, 39, 25, 551, 1…
+$ exp_fecha     <date> 2017-12-01, 2019-02-01, 2016-07-01, 2017-01-01, 2015-07-01, 2015-10-01, 2015-01-01, 2015-0…
+
+
+
+> datos %>% introduce()
+  rows columns discrete_columns continuous_columns all_missing_columns total_missing_values complete_rows
+1  132      15               11                  4                   0                   29           105
+  total_observations memory_usage
+1               1980       138376
+
+
+
+> datos %>% profile_missing()
+         feature num_missing pct_missing
+1             id           0 0.000000000
+2      op_titulo           0 0.000000000
+3    exp_fec_txt           0 0.000000000
+4       op_texto           0 0.000000000
+5     op_escrito           0 0.000000000
+6      vj_nombre           0 0.000000000
+7      vj_perfil           0 0.000000000
+8      vj_seunio           0 0.000000000
+9      vj_ubicac           0 0.000000000
+10       exp_mes           1 0.007575758
+11      exp_anio           1 0.007575758
+12      exp_tipo           0 0.000000000
+13       vj_pais          26 0.196969697
+14 a_num_aportes           0 0.000000000
+15     exp_fecha           1 0.007575758
+
+
+

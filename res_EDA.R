@@ -23,11 +23,17 @@ datos <- read.csv('datos_ed.csv')
 
 # Ajustes a campos
 datos$a_num_aportes <- as.integer(as.character(datos$a_num_aportes))
+#datos$a_num_aportes <- as.integer(as.character(datos$vj_aportes))  # sólo S05
+#datos = subset(datos, select = -c(vj_aportes) )  # sólo S05
+
 txt_anio <- str_trim(as.character(datos$exp_anio))
 txt_mes <- str_trim(sprintf("%02d",datos$exp_mes))
-txt_fecha <- paste(v_anio,v_mes,'01',sep="-")
+txt_fecha <- paste(txt_anio,txt_mes,'01',sep="-")
 v_fecha <- as.Date(txt_fecha)
 datos$exp_fecha <- v_fecha
+
+# Guardar nueva base de datos
+write.csv(datos, 'datos_ed2.csv')
 
 # Vista general del conjunto de datos
 datos %>% glimpse()
@@ -53,3 +59,7 @@ datos %>% plot_bar()
 
 # Gráfico de correlación
 datos %>% plot_correlation()
+datos %>% plot_correlation(maxcat = 7) 
+
+# Gráfico de correlación (alternativa)
+pairs(datos)
