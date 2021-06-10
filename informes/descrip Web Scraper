@@ -1,0 +1,4 @@
+extensión para Google Chrome: Web Scraper, desarrollada por webscraper.io (http://webscraper.io/)
+
+Es una herramienta de extracción de datos web con un fácil interfaz de apuntar y hacer clic. Utiliza una estructura modular compuesta de selectores, que instruye al extractor como recorrer el sitio destino y qué datos extraer. 
+La extracción se ejecuta en el navegador y no requiere que se instale nada en la computadora. No necesita experiencia de codificación Python, PHP, o JavaScript.
